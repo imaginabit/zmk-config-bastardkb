@@ -1,20 +1,29 @@
-# if SHIELD_BASTARDKB_LEFT
-if SHIELD_BASTARDKB_RIGHT
-config ZMK_KEYBOARD_NAME
-    default "bastardkb"
+config SHIELD_BASTARDKB_RIGHT
+    # Keyboard metadata
+    config ZMK_KEYBOARD_NAME
+        default "BastardKB Right"
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
+    # Split role (right = central/master)
+    config ZMK_SPLIT_ROLE_CENTRAL
+        default y
 
-config ZMK_USB
-	default y
+    # Connectivity (USB + BLE)
+    config ZMK_USB
+        default y
 
-endif
+    # BLE (already default, but explicit for clarity)
+    config ZMK_BLE
+        default y
+    config ZMK_BLE_PERIPHERAL
+        default n  # Right is central, left is peripheral
+
+    # Display/OLED (if your PCB has it)
+    config ZMK_DISPLAY
+        default y
+
+endif  # SHIELD_BASTARDKB_RIGHT
 
 if SHIELD_BASTARDKB_LEFT || SHIELD_BASTARDKB_RIGHT
-
-config ZMK_SPLIT
-    default y
-
+    config ZMK_SPLIT
+        default y
 endif
-  

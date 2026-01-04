@@ -9,3 +9,8 @@
         , <&pro_micro 10 GPIO_ACTIVE_HIGH> // col5 in the schematic
         ;
 };
+/ {
+    CONFIG_ZMK_BLE=y;
+    CONFIG_ZMK_BLE_PERIPHERAL=y;
+    CONFIG_ZMK_DISPLAY=y;  // Si OLED
+};

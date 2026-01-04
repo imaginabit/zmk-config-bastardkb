@@ -1,6 +1,6 @@
 #include "bastardkb.overlay" // Notice that the main dtsi files are included in the overlay.
 
-&nice_nano_v2 {
+&nice_nano {
     compatible = "bastardkb_left";
 };
 
